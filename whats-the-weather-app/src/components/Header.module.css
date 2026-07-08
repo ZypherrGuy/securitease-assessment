@@ -27,3 +27,22 @@
   height: 90px;
   width: auto;
 }
+
+@media (max-width: 768px) {
+  .logoWrapper {
+    overflow: hidden;
+    transition:
+      opacity 0.35s ease,
+      transform 0.35s ease,
+      width 0.35s ease,
+      margin 0.35s ease;
+  }
+
+  .logoHidden {
+    width: 0;
+    margin: 0;
+    opacity: 0;
+    transform: scale(0.5);
+    pointer-events: none;
+  }
+}

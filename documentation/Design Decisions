@@ -14,6 +14,7 @@ I will start off with creating the react vite template
 - Regarding the initial design, I just generated a quick to use logo with a theme palette I found online and created a palette image (assets\palette\colour-palette.png) to follow.
 - I made the decision to seperate styling segment, such colours,typography, into their own individual parts, keeping global as the pure structure. I like this for multiple reasons, including semantic naming and potential avenues for shared brand configuration (Should this be a multi-brand product down the line)
 - Planning the layout now, I have looked at a few existing designs now (documentation\Design Research) just to get an idea for the feel.
+- I have decided to use CSS Modules, for better file following and styling practices. This is a personal preference.
 
 # Architecture
 
@@ -31,3 +32,4 @@ I will start off with creating the react vite template
 
 - https://react.dev/learn/build-a-react-app-from-scratch
 - https://docs.apilayer.com/weatherstack/docs/api-documentation?utm_source=dashboard&utm_medium=Referral
+- https://www.svgrepo.com (Get my SVG images from here)
