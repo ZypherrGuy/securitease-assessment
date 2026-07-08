@@ -19,7 +19,7 @@ I like this for multiple reasons, including semantic naming and potential avenue
 
 - Folder/File Structure, I decided to go for a simplified structure, easy to read, easy to understand at all levels of development - I am very much mindset at ensuring a codebase is entry-level friendly, without over complicated terms and structures that would confuse anyone.
 - State Management - I decided on Jotai, this is the global react state management I am most familiar with on a commercial level.
--
+- Shell structure - I always have developer the app layout starting with a shell, this helps me get a skeleton layout I can start developing over, Normally, I would seperate the shell into its own layout, however due to this working as a single page application, the App.tsx should be sufficient to hold the shell structure.
 
 # Notes
 
