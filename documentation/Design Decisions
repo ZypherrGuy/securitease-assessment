@@ -1,0 +1,14 @@
+# First Look
+
+My initial thoughts on the asseessment is that it it quite the project.
+I was excited to start, as I do enjoy these types of projects.
+It doesnt seem too difficult and I will try my best to provide a full product, with additional features for extra critique should time be a friend.
+
+# Start
+
+I will start off with creating the react vite template
+`create vite@latest whats-the-weather-app -- --template react-ts`
+
+# References/Sources for those who want to follow:
+
+- https://react.dev/learn/build-a-react-app-from-scratch
