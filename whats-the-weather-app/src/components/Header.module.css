@@ -1,0 +1,29 @@
+.header {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 32px;
+  background: var(--color-secondary);
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/assets/images/cloud_banner.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.35;
+}
+
+.logoWrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.logo {
+  height: 90px;
+  width: auto;
+}

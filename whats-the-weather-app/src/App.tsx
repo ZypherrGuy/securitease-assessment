@@ -1,12 +1,10 @@
-import "./App.css";
+import { Header } from "./components";
+import styles from "./App.module.css";
 
 function App() {
   return (
-    <div id="app">
-      <header>
-        <h1>What's the Weather</h1>
-        {/* TODO: Search input */}
-      </header>
+    <div className={styles.app}>
+      <Header />
       <main>{/* TODO: Current weather and selected weather display */}</main>
       <section>{/* TODO: Forecast and history */}</section>
     </div>
