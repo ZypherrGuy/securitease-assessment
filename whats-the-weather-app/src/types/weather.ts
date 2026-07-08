@@ -35,6 +35,7 @@ export interface WeatherStackCurrentResponse {
 
 export interface DayWeather {
   date: string;
+  time?: string;
   temperature: number;
   feelsLike: number;
   description: string;

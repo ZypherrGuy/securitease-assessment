@@ -1,4 +1,4 @@
-import { Header } from "./components";
+import { Header, WeatherCard } from "./components";
 import { useCurrentWeather } from "./hooks";
 import styles from "./App.module.css";
 
@@ -8,14 +8,10 @@ function App() {
   return (
     <div className={styles.app}>
       <Header onSearch={search} />
-      <main>
-        {/* TODO: this will be replaced with the real Current Weather card component */}
-        {/* Just here for testing */}
+      <main className={styles.main}>
         {state.status === "loading" && <p>Loading...</p>}
         {state.status === "error" && <p>{state.error}</p>}
-        {state.status === "success" && (
-          <pre>{JSON.stringify(state.data, null, 2)}</pre>
-        )}
+        {state.status === "success" && <WeatherCard data={state.data} />}
       </main>
       <section>{/* TODO: Forecast and history */}</section>
     </div>

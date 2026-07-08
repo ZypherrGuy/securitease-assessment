@@ -5,6 +5,7 @@ export function mapToDayWeather(raw: WeatherStackCurrentResponse): DayWeather {
 
   return {
     date: location.localtime.split(" ")[0], // I seperated the Date from the full date/time reponse
+    time: location.localtime.split(" ")[1], // As per above
     temperature: current.temperature,
     feelsLike: current.feelslike,
     description: current.weather_descriptions[0],
