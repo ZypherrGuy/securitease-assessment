@@ -24,7 +24,7 @@ I like this for multiple reasons, including semantic naming and potential avenue
 # Notes
 
 - Exploring the weatherstackAPI Documentation, I found the weather stack playground to be extremely useful (https://docs.apilayer.com/weatherstack/docs/weatherstack-api-v-1-0-0)
--
+- For the Purpose of this project, I have prefixed variables with VITE*... unprefixed variables are never made available to the browser bundle, as a security default and since this project has no backend to keep the API key server-side, the variables are pretty much exposed and the VITE* prefix doesn't cause that exposure.
 
 # References/Sources for those who want to follow:
 

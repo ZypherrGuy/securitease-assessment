@@ -1,2 +1,3 @@
-# Setup Instructions 
+# Setup Instructions
 
+1. Added a .env.example as a template strucutre for local dev runs.
