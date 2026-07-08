@@ -15,6 +15,18 @@ Regarding the initial design, I just generated a quick to use logo with a theme 
 I made the decision to seperate styling segment, such colours,typography, into their own individual parts, keeping global as the pure structure.
 I like this for multiple reasons, including semantic naming and potential avenues for shared brand configuration (Should this be a multi-brand product down the line)
 
+# Architecture
+
+- Folder/File Structure, I decided to go for a simplified structure, easy to read, easy to understand at all levels of development - I am very much mindset at ensuring a codebase is entry-level friendly, without over complicated terms and structures that would confuse anyone.
+- State Management - I decided on Jotai, this is the global react state management I am most familiar with on a commercial level.
+-
+
+# Notes
+
+- Exploring the weatherstackAPI Documentation, I found the weather stack playground to be extremely useful (https://docs.apilayer.com/weatherstack/docs/weatherstack-api-v-1-0-0)
+-
+
 # References/Sources for those who want to follow:
 
 - https://react.dev/learn/build-a-react-app-from-scratch
+- https://docs.apilayer.com/weatherstack/docs/api-documentation?utm_source=dashboard&utm_medium=Referral
