@@ -4,6 +4,8 @@ import styles from "./WeatherRangeCard.module.css";
 
 interface WeatherRangeCardProps {
   data: DayWeather;
+  isSelected: boolean;
+  onSelect: () => void;
 }
 
 function formatDayLabel(isoDate: string): string {
@@ -17,9 +19,23 @@ function formatDayLabel(isoDate: string): string {
   return `${weekday}, ${monthDay}`;
 }
 
-export function WeatherRangeCard({ data }: WeatherRangeCardProps) {
+export function WeatherRangeCard({
+  data,
+  isSelected,
+  onSelect,
+}: WeatherRangeCardProps) {
   return (
-    <article className={styles.card}>
+    <article
+      className={`${styles.card} ${isSelected ? styles.selected : ""}`}
+      onClick={onSelect}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          onSelect();
+        }
+      }}
+    >
       <span className={styles.day}>{formatDayLabel(data.date)}</span>
       <img src={data.iconUrl} alt={data.description} className={styles.icon} />
       <span className={styles.description}>{data.description}</span>

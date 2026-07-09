@@ -1,5 +1,5 @@
 import { atom } from "jotai";
-import type { WeatherData } from "../types";
+import type { DayWeather, WeatherData } from "../types";
 
 export type WeatherState =
   | { status: "idle" }
@@ -8,3 +8,6 @@ export type WeatherState =
   | { status: "error"; error: string };
 
 export const weatherAtom = atom<WeatherState>({ status: "idle" });
+
+// Just want to make sure that the main display always falls back to today's weather (null)
+export const selectedDayAtom = atom<DayWeather | null>(null);
