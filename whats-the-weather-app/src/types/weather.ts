@@ -45,6 +45,7 @@ export interface DayWeather {
 }
 
 export interface WeatherData {
+  location: string;
   current: DayWeather;
   forecast: DayWeather[];
   history: DayWeather[];

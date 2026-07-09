@@ -6,6 +6,7 @@ interface WeatherRangeCardProps {
   data: DayWeather;
   isSelected: boolean;
   onSelect: () => void;
+  variant?: "history" | "forecast";
 }
 
 function formatDayLabel(isoDate: string): string {
@@ -23,10 +24,13 @@ export function WeatherRangeCard({
   data,
   isSelected,
   onSelect,
+  variant = "history",
 }: WeatherRangeCardProps) {
   return (
     <article
-      className={`${styles.card} ${isSelected ? styles.selected : ""}`}
+      className={`${styles.card} ${variant === "forecast" ? styles.forecast : ""} ${
+        isSelected ? styles.selected : ""
+      }`}
       onClick={onSelect}
       role="button"
       tabIndex={0}

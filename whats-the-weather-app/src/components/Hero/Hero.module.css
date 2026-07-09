@@ -1,0 +1,73 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    120deg,
+    var(--color-primary) 0%,
+    var(--color-primary) 55%,
+    var(--color-secondary) 100%
+  );
+  padding: 64px 32px 96px;
+  text-align: center;
+}
+
+.decor {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
+.decorOne {
+  width: 220px;
+  height: 220px;
+  left: 4%;
+  bottom: -40px;
+}
+
+.decorTwo {
+  width: 160px;
+  height: 160px;
+  right: 8%;
+  top: 10%;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.decorThree {
+  width: 90px;
+  height: 90px;
+  right: 22%;
+  top: 55%;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.heading {
+  margin: 0 0 12px;
+  color: var(--color-white);
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.subtext {
+  margin: 0 0 28px;
+  color: var(--color-white);
+  opacity: 0.85;
+  font-size: 15px;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 48px 20px 80px;
+  }
+
+  .heading {
+    font-size: 28px;
+  }
+}

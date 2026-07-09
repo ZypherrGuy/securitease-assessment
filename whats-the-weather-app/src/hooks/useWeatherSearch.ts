@@ -41,7 +41,12 @@ export function useWeatherSearch() {
         .filter((day) => day.datetime > current.date)
         .map(mapVisualCrossingDay);
 
-      const data = { current, forecast, history };
+      const data = {
+        location: currentRaw.location.name,
+        current,
+        forecast,
+        history,
+      };
       setCachedWeather(query, data);
       setState({ status: "success", data });
     } catch (error) {

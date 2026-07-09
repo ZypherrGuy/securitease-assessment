@@ -3,6 +3,7 @@ import { getCachedWeather, setCachedWeather } from "./weatherCache";
 import type { WeatherData } from "../../types";
 
 const sampleData: WeatherData = {
+  location: "London",
   current: {
     date: "2026-07-09",
     temperature: 20,

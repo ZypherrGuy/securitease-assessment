@@ -2,20 +2,14 @@ import styles from "./WeatherStat.module.css";
 
 interface WeatherStatProps {
   label: string;
-  value?: string;
-  percentage?: number;
+  value: string;
 }
 
-export function WeatherStat({ label, value, percentage }: WeatherStatProps) {
+export function WeatherStat({ label, value }: WeatherStatProps) {
   return (
     <div className={styles.stat}>
       <span className={styles.label}>{label}</span>
-      {value && <span className={styles.value}>{value}</span>}
-      {percentage !== undefined && (
-        <div className={styles.track}>
-          <div className={styles.fill} style={{ width: `${percentage}%` }} />
-        </div>
-      )}
+      <span className={styles.value}>{value}</span>
     </div>
   );
 }
