@@ -1,9 +1,9 @@
 import { Header, WeatherCard } from "./components";
-import { useCurrentWeather } from "./hooks";
+import { useWeatherSearch } from "./hooks";
 import styles from "./App.module.css";
 
 function App() {
-  const { state, search } = useCurrentWeather();
+  const { state, search } = useWeatherSearch();
 
   return (
     <div className={styles.app}>
@@ -11,9 +11,16 @@ function App() {
       <main className={styles.main}>
         {state.status === "loading" && <p>Loading...</p>}
         {state.status === "error" && <p>{state.error}</p>}
-        {state.status === "success" && <WeatherCard data={state.data} />}
+        {state.status === "success" && (
+          <WeatherCard data={state.data.current} />
+        )}
       </main>
-      <section>{/* TODO: Forecast and history */}</section>
+      <section>
+        {/* TODO: replace this with the real forecast/history grid */}
+        {state.status === "success" && (
+          <pre>{JSON.stringify(state.data.history, null, 2)}</pre>
+        )}
+      </section>
     </div>
   );
 }

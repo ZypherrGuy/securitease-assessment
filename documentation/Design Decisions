@@ -28,6 +28,11 @@ I will start off with creating the react vite template
 - For the Purpose of this project, I have prefixed variables with VITE*... unprefixed variables are never made available to the browser bundle, as a security default and since this project has no backend to keep the API key server-side, the variables are pretty much exposed and the VITE* prefix doesn't cause that exposure.
 - One thing I wasnt sure on, until I teste dthe getCurrentWeather was that the response included a proper date response, I was worried that when I would query the locations local time, if someone in South Africa searches for "Tokyo," the date should reflect Tokyo's local day, not their own. This was confirmed to be returned correctly through location.localtime_epoch and localtime, and since localtime is provided as a plain string, I will use this.
 - When testing the The historical data, I hit rate_limit_reached - I wasnt sure what the call rate was on the API, So I am investigating this now.
+- I did some research regarding the above, initially a provider called open mateo, which looked to be the best option until I notices that the Open Mateo weather forcast/historical data required latitude/longitude, and not a free-text location name like weatherAPI used. It would work but would require an extra layer to convert the location text into geocode before fetching the data. After doing more research I came across visual crossing, as it works identical to how we search already and does require any additional layers.
+- Regarding the icon display, due to using 2 seperate weather APIs (Weatherstack API & Visual Crossing API), the icons would look complete different making the design look tacky, I sourced my own set of Icons that I will map accordingly
+- Normally I would host the images/icons in some sort of cloud store, like Strapi CMS, or Cloudflare R2 Bucket - for the sake of this I will keep everything public root level.
+- When Working on the Historical Data, I decided to change a few things like DayWeather/Current weather types to an overall WeatherData naming convetion. Considering that Current/historical/Forcast, all hold the same data, I didnt want to duplicate types.
+- I didnt want to duplicate the functionality of Historical(Past)/Forcast(Present) into their duplicate segments, I though a all round Shift function would make sense, being able to profice and past and future incremental shift on current date . (I have these as harcode variable for now like HISTORY_DAYS)
 
 # Challenges
 
@@ -38,3 +43,4 @@ I will start off with creating the react vite template
 - https://react.dev/learn/build-a-react-app-from-scratch
 - https://docs.apilayer.com/weatherstack/docs/api-documentation?utm_source=dashboard&utm_medium=Referral
 - https://www.svgrepo.com (Get my SVG images from here)
+- https://www.flaticon.com/packs/weather-161 (Icon pack)

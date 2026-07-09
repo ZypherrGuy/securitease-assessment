@@ -1,1 +1,1 @@
-export * from "./currentWeather";
+export * from "./weather";

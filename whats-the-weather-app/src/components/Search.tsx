@@ -51,7 +51,7 @@ function Search({ onSearch, isExpanded, onToggle }: SearchProps) {
         aria-label="Open search"
       >
         <img
-          src="/assets/icons/search_white.svg"
+          src="/assets/icons/search/search_white.svg"
           alt=""
           className={styles.triggerIcon}
         />
@@ -66,9 +66,13 @@ function Search({ onSearch, isExpanded, onToggle }: SearchProps) {
           placeholder="Search location..."
           aria-label="Search location"
         />
-        <button type="submit" className={styles.submitButton} aria-label="Search">
+        <button
+          type="submit"
+          className={styles.submitButton}
+          aria-label="Search"
+        >
           <img
-            src="/assets/icons/search_black.svg"
+            src="/assets/icons/search/search_black.svg"
             alt=""
             className={styles.submitIcon}
           />
