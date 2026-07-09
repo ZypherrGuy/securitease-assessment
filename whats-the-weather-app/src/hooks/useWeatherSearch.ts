@@ -7,6 +7,7 @@ import {
   shiftDate,
   getCachedWeather,
   setCachedWeather,
+  getWeatherErrorMessage,
 } from "../utils";
 
 const RANGE_DAYS = 3;
@@ -52,7 +53,7 @@ export function useWeatherSearch() {
     } catch (error) {
       setState({
         status: "error",
-        error: error instanceof Error ? error.message : "Oh no! Mission Failed",
+        error: getWeatherErrorMessage(error),
       });
     }
   }
