@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { mapVisualCrossingDay } from "./visualCrossingMapper";
-import type { VisualCrossingDay } from "../types";
+import type { VisualCrossingDay } from "../../types";
 
 const raw: VisualCrossingDay = {
   datetime: "2026-07-06",

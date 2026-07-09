@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { mapToDayWeather } from "./weatherMapper";
-import type { WeatherStackCurrentResponse } from "../types";
+import type { WeatherStackCurrentResponse } from "../../types";
 
 const raw: WeatherStackCurrentResponse = {
   location: {

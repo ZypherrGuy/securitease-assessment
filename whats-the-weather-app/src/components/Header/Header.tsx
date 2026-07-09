@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Search } from "./Search";
+import { Search } from "../Search/Search";
 import styles from "./Header.module.css";
 
 interface HeaderProps {

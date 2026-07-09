@@ -1,4 +1,4 @@
-import type { DayWeather, WeatherStackCurrentResponse } from "../types";
+import type { DayWeather, WeatherStackCurrentResponse } from "../../types";
 
 export function mapToDayWeather(raw: WeatherStackCurrentResponse): DayWeather {
   const { location, current } = raw;

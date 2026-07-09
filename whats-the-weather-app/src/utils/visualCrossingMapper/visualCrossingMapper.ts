@@ -1,5 +1,5 @@
-import type { DayWeather, VisualCrossingDay } from "../types";
-import { getWeatherIconUrl } from "./weatherIcons";
+import type { DayWeather, VisualCrossingDay } from "../../types";
+import { getWeatherIconUrl } from "../weatherIcons/weatherIcons";
 
 export function mapVisualCrossingDay(day: VisualCrossingDay): DayWeather {
   return {

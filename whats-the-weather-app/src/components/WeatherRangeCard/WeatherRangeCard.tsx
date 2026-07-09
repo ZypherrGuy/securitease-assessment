@@ -1,5 +1,5 @@
-import type { DayWeather } from "../types";
-import { WeatherStat } from "./WeatherStat";
+import type { DayWeather } from "../../types";
+import { WeatherStat } from "../WeatherStat/WeatherStat";
 import styles from "./WeatherRangeCard.module.css";
 
 interface WeatherRangeCardProps {

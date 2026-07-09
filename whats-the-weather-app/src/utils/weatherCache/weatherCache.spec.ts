@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach } from "vitest";
 import { getCachedWeather, setCachedWeather } from "./weatherCache";
-import type { WeatherData } from "../types";
+import type { WeatherData } from "../../types";
 
 const sampleData: WeatherData = {
   current: {

@@ -1,4 +1,4 @@
-import type { WeatherData } from "../types";
+import type { WeatherData } from "../../types";
 
 const CACHE_TTL_MS = 20 * 60 * 1000;
 
