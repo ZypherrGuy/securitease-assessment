@@ -35,6 +35,11 @@ I will start off with creating the react vite template
 - I didnt want to duplicate the functionality of Historical(Past)/Forcast(Present) into their duplicate segments, I though a all round Shift function would make sense, being able to profice and past and future incremental shift on current date . (I have these as harcode variable for now like HISTORY_DAYS)
 - After finishing Historical and working on forcast I deciding that instead of calling getWeatherRange twice, It can be called once using a range set.
 - as a code preference, I prefer using named exports over the default exports, so I refactored and standardized the named exports which means every barrel across the project uses the exact same.
+- for the caching, i decided to go with localStorage, I wanted it to be time based apposed to a session and local storage respects the time assigned.
+
+# Testing
+
+- For the testing frameworks, I am normally used to using jest, I havent used much of vitest, however in the context I am aware that bitest is a better and does have alot of jest similarities.
 
 # Challenges
 
