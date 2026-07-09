@@ -1,0 +1,5 @@
+{
+  "installCommand": "cd whats-the-weather-app && npm install",
+  "buildCommand": "cd whats-the-weather-app && npm run build",
+  "outputDirectory": "whats-the-weather-app/dist"
+}
