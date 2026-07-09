@@ -27,6 +27,11 @@ I will start off with creating the react vite template
 - Exploring the weatherstackAPI Documentation, I found the weather stack playground to be extremely useful (https://docs.apilayer.com/weatherstack/docs/weatherstack-api-v-1-0-0)
 - For the Purpose of this project, I have prefixed variables with VITE*... unprefixed variables are never made available to the browser bundle, as a security default and since this project has no backend to keep the API key server-side, the variables are pretty much exposed and the VITE* prefix doesn't cause that exposure.
 - One thing I wasnt sure on, until I teste dthe getCurrentWeather was that the response included a proper date response, I was worried that when I would query the locations local time, if someone in South Africa searches for "Tokyo," the date should reflect Tokyo's local day, not their own. This was confirmed to be returned correctly through location.localtime_epoch and localtime, and since localtime is provided as a plain string, I will use this.
+- When testing the The historical data, I hit rate_limit_reached - I wasnt sure what the call rate was on the API, So I am investigating this now.
+
+# Challenges
+
+- I came to learn that the free tiered version of the weatherStackAPI does not allow for historical and forcast Data - After following up with the reviewers it was recommended to find an alternative approach through a free provider
 
 # References/Sources for those who want to follow:
 
