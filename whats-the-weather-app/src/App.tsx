@@ -18,7 +18,10 @@ function App() {
       <section>
         {/* TODO: replace this with the real forecast/history grid */}
         {state.status === "success" && (
-          <pre>{JSON.stringify(state.data.history, null, 2)}</pre>
+          <>
+            <pre>Forecast: {JSON.stringify(state.data.forecast, null, 2)}</pre>
+            <pre>History: {JSON.stringify(state.data.history, null, 2)}</pre>
+          </>
         )}
       </section>
     </div>

@@ -3,7 +3,7 @@ import { weatherAtom } from "../atoms";
 import { getCurrentWeather, getWeatherRange } from "../services";
 import { mapToDayWeather, mapVisualCrossingDay, shiftDate } from "../utils";
 
-const HISTORY_DAYS = 3;
+const RANGE_DAYS = 3;
 
 export function useWeatherSearch() {
   const [state, setState] = useAtom(weatherAtom);
@@ -15,12 +15,19 @@ export function useWeatherSearch() {
       const currentRaw = await getCurrentWeather(query);
       const current = mapToDayWeather(currentRaw);
 
-      const historyStart = shiftDate(current.date, -HISTORY_DAYS);
-      const historyEnd = shiftDate(current.date, -1);
-      const historyRaw = await getWeatherRange(query, historyStart, historyEnd);
-      const history = historyRaw.days.map(mapVisualCrossingDay);
+      const rangeStart = shiftDate(current.date, -RANGE_DAYS);
+      const rangeEnd = shiftDate(current.date, RANGE_DAYS);
+      const rangeRaw = await getWeatherRange(query, rangeStart, rangeEnd);
 
-      setState({ status: "success", data: { current, forecast: [], history } });
+      const history = rangeRaw.days
+        .filter((day) => day.datetime < current.date)
+        .map(mapVisualCrossingDay);
+
+      const forecast = rangeRaw.days
+        .filter((day) => day.datetime > current.date)
+        .map(mapVisualCrossingDay);
+
+      setState({ status: "success", data: { current, forecast, history } });
     } catch (error) {
       setState({
         status: "error",
