@@ -1,7 +1,13 @@
 import { useAtom, useSetAtom } from "jotai";
 import { weatherAtom, selectedDayAtom } from "../atoms";
 import { getCurrentWeather, getWeatherRange } from "../services";
-import { mapToDayWeather, mapVisualCrossingDay, shiftDate } from "../utils";
+import {
+  mapToDayWeather,
+  mapVisualCrossingDay,
+  shiftDate,
+  getCachedWeather,
+  setCachedWeather,
+} from "../utils";
 
 const RANGE_DAYS = 3;
 
@@ -12,6 +18,12 @@ export function useWeatherSearch() {
   async function search(query: string) {
     setState({ status: "loading" });
     setSelectedDay(null);
+
+    const cached = getCachedWeather(query);
+    if (cached) {
+      setState({ status: "success", data: cached });
+      return;
+    }
 
     try {
       const currentRaw = await getCurrentWeather(query);
@@ -29,7 +41,9 @@ export function useWeatherSearch() {
         .filter((day) => day.datetime > current.date)
         .map(mapVisualCrossingDay);
 
-      setState({ status: "success", data: { current, forecast, history } });
+      const data = { current, forecast, history };
+      setCachedWeather(query, data);
+      setState({ status: "success", data });
     } catch (error) {
       setState({
         status: "error",
