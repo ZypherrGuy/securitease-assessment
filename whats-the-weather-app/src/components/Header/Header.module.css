@@ -1,0 +1,48 @@
+.header {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 32px;
+  background: var(--color-secondary);
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/assets/images/cloud_banner.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.35;
+}
+
+.logoWrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.logo {
+  height: 90px;
+  width: auto;
+}
+
+@media (max-width: 768px) {
+  .logoWrapper {
+    overflow: hidden;
+    transition:
+      opacity 0.35s ease,
+      transform 0.35s ease,
+      width 0.35s ease,
+      margin 0.35s ease;
+  }
+
+  .logoHidden {
+    width: 0;
+    margin: 0;
+    opacity: 0;
+    transform: scale(0.5);
+    pointer-events: none;
+  }
+}

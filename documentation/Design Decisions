@@ -9,6 +9,45 @@ It doesnt seem too difficult and I will try my best to provide a full product, w
 I will start off with creating the react vite template
 `create vite@latest whats-the-weather-app -- --template react-ts`
 
+# Design
+
+- Regarding the initial design, I just generated a quick to use logo with a theme palette I found online and created a palette image (assets\palette\colour-palette.png) to follow.
+- I made the decision to seperate styling segment, such colours,typography, into their own individual parts, keeping global as the pure structure. I like this for multiple reasons, including semantic naming and potential avenues for shared brand configuration (Should this be a multi-brand product down the line)
+- Planning the layout now, I have looked at a few existing designs now (documentation\Design Research) just to get an idea for the feel.
+- I have decided to use CSS Modules, for better file following and styling practices. This is a personal preference.
+
+# Architecture
+
+- Folder/File Structure, I decided to go for a simplified structure, easy to read, easy to understand at all levels of development - I am very much mindset at ensuring a codebase is entry-level friendly, without over complicated terms and structures that would confuse anyone.
+- State Management - I decided on Jotai, this is the global react state management I am most familiar with on a commercial level.
+- Shell structure - I always have developer the app layout starting with a shell, this helps me get a skeleton layout I can start developing over, Normally, I would seperate the shell into its own layout, however due to this working as a single page application, the App.tsx should be sufficient to hold the shell structure.
+
+# Notes
+
+- Exploring the weatherstackAPI Documentation, I found the weather stack playground to be extremely useful (https://docs.apilayer.com/weatherstack/docs/weatherstack-api-v-1-0-0)
+- For the Purpose of this project, I have prefixed variables with VITE*... unprefixed variables are never made available to the browser bundle, as a security default and since this project has no backend to keep the API key server-side, the variables are pretty much exposed and the VITE* prefix doesn't cause that exposure.
+- One thing I wasnt sure on, until I teste dthe getCurrentWeather was that the response included a proper date response, I was worried that when I would query the locations local time, if someone in South Africa searches for "Tokyo," the date should reflect Tokyo's local day, not their own. This was confirmed to be returned correctly through location.localtime_epoch and localtime, and since localtime is provided as a plain string, I will use this.
+- When testing the The historical data, I hit rate_limit_reached - I wasnt sure what the call rate was on the API, So I am investigating this now.
+- I did some research regarding the above, initially a provider called open mateo, which looked to be the best option until I notices that the Open Mateo weather forcast/historical data required latitude/longitude, and not a free-text location name like weatherAPI used. It would work but would require an extra layer to convert the location text into geocode before fetching the data. After doing more research I came across visual crossing, as it works identical to how we search already and does require any additional layers.
+- Regarding the icon display, due to using 2 seperate weather APIs (Weatherstack API & Visual Crossing API), the icons would look complete different making the design look tacky, I sourced my own set of Icons that I will map accordingly
+- Normally I would host the images/icons in some sort of cloud store, like Strapi CMS, or Cloudflare R2 Bucket - for the sake of this I will keep everything public root level.
+- When Working on the Historical Data, I decided to change a few things like DayWeather/Current weather types to an overall WeatherData naming convetion. Considering that Current/historical/Forcast, all hold the same data, I didnt want to duplicate types.
+- I didnt want to duplicate the functionality of Historical(Past)/Forcast(Present) into their duplicate segments, I though a all round Shift function would make sense, being able to profice and past and future incremental shift on current date . (I have these as harcode variable for now like HISTORY_DAYS)
+- After finishing Historical and working on forcast I deciding that instead of calling getWeatherRange twice, It can be called once using a range set.
+- as a code preference, I prefer using named exports over the default exports, so I refactored and standardized the named exports which means every barrel across the project uses the exact same.
+- for the caching, i decided to go with localStorage, I wanted it to be time based apposed to a session and local storage respects the time assigned.
+
+# Testing
+
+- For the testing frameworks, I am normally used to using jest, I havent used much of vitest, however in the context I am aware that bitest is a better and does have alot of jest similarities.
+
+# Challenges
+
+- I came to learn that the free tiered version of the weatherStackAPI does not allow for historical and forcast Data - After following up with the reviewers it was recommended to find an alternative approach through a free provider
+
 # References/Sources for those who want to follow:
 
 - https://react.dev/learn/build-a-react-app-from-scratch
+- https://docs.apilayer.com/weatherstack/docs/api-documentation?utm_source=dashboard&utm_medium=Referral
+- https://www.svgrepo.com (Get my SVG images from here)
+- https://www.flaticon.com/packs/weather-161 (Icon pack)

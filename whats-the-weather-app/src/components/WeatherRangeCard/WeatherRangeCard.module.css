@@ -1,0 +1,43 @@
+.card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 24px;
+  border-radius: 12px;
+  background: var(--color-grey-light);
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.selected {
+  border-color: var(--color-primary);
+}
+
+.day {
+  min-width: 90px;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+}
+
+.description {
+  flex: 1;
+  color: var(--color-primary);
+  opacity: 0.7;
+}
+
+.temperature {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.stats {
+  display: flex;
+  gap: 24px;
+  margin-left: auto;
+}

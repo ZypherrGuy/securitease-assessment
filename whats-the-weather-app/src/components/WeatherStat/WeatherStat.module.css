@@ -1,0 +1,32 @@
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 96px;
+}
+
+.label {
+  font-size: 12px;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.value {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.track {
+  height: 14px;
+  border-radius: 7px;
+  background: var(--color-grey-light);
+  overflow: hidden;
+  transform: translateY(4px);
+}
+
+.fill {
+  height: 100%;
+  border-radius: 7px;
+  background: linear-gradient(90deg, #c9a227, #f28c28, #e63946);
+}
