@@ -36,6 +36,8 @@ I will start off with creating the react vite template
 - After finishing Historical and working on forcast I deciding that instead of calling getWeatherRange twice, It can be called once using a range set.
 - as a code preference, I prefer using named exports over the default exports, so I refactored and standardized the named exports which means every barrel across the project uses the exact same.
 - for the caching, i decided to go with localStorage, I wanted it to be time based apposed to a session and local storage respects the time assigned.
+- For the Last part now that everything has deployed successfully to vercel - the application can be found at https://securitease-assessment.vercel.app/
+- I have used Figma AI to generate a Suitable UI/UX Mockup which I will follow to replicate a user friendly design. This deviates from my Original Design layout, which I have now archived (See Design Mockup - )
 
 # Testing
 
@@ -51,3 +53,6 @@ I will start off with creating the react vite template
 - https://docs.apilayer.com/weatherstack/docs/api-documentation?utm_source=dashboard&utm_medium=Referral
 - https://www.svgrepo.com (Get my SVG images from here)
 - https://www.flaticon.com/packs/weather-161 (Icon pack)
+- https://vercel.com/
+- https://www.figma.com/
+- https://claude.ai/
