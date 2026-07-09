@@ -81,6 +81,8 @@
     margin-left: 0;
     padding-left: 0;
     border-left: none;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 12px;
   }
 }

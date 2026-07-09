@@ -4,10 +4,13 @@ export function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.brand}>
-        <span className={styles.mark} />
+        <img
+          src="/assets/icons/sun-icon.png"
+          alt=""
+          className={styles.mark}
+        />
         <span className={styles.wordmark}>What's The Weather?</span>
       </div>
-      <p className={styles.tagline}>Live weather, wherever you are</p>
     </header>
   );
 }
