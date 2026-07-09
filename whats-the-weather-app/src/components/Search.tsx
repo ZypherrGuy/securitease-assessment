@@ -8,7 +8,7 @@ interface SearchProps {
   onToggle: () => void;
 }
 
-function Search({ onSearch, isExpanded, onToggle }: SearchProps) {
+export function Search({ onSearch, isExpanded, onToggle }: SearchProps) {
   const [query, setQuery] = useState("");
   const wrapperRef = useRef<HTMLDivElement>(null);
 
@@ -81,5 +81,3 @@ function Search({ onSearch, isExpanded, onToggle }: SearchProps) {
     </div>
   );
 }
-
-export default Search;

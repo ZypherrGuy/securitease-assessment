@@ -1,8 +1,8 @@
-import { Header, WeatherCard } from "./components";
+import { Header, WeatherCard, WeatherRangeSection } from "./components";
 import { useWeatherSearch } from "./hooks";
 import styles from "./App.module.css";
 
-function App() {
+export function App() {
   const { state, search } = useWeatherSearch();
 
   return (
@@ -15,17 +15,14 @@ function App() {
           <WeatherCard data={state.data.current} />
         )}
       </main>
-      <section>
-        {/* TODO: replace this with the real forecast/history grid */}
+      <section className={styles.ranges}>
         {state.status === "success" && (
           <>
-            <pre>Forecast: {JSON.stringify(state.data.forecast, null, 2)}</pre>
-            <pre>History: {JSON.stringify(state.data.history, null, 2)}</pre>
+            <WeatherRangeSection title="Next 3 Days" days={state.data.forecast} />
+            <WeatherRangeSection title="Past 3 Days" days={state.data.history} />
           </>
         )}
       </section>
     </div>
   );
 }
-
-export default App;

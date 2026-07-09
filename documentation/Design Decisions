@@ -33,6 +33,8 @@ I will start off with creating the react vite template
 - Normally I would host the images/icons in some sort of cloud store, like Strapi CMS, or Cloudflare R2 Bucket - for the sake of this I will keep everything public root level.
 - When Working on the Historical Data, I decided to change a few things like DayWeather/Current weather types to an overall WeatherData naming convetion. Considering that Current/historical/Forcast, all hold the same data, I didnt want to duplicate types.
 - I didnt want to duplicate the functionality of Historical(Past)/Forcast(Present) into their duplicate segments, I though a all round Shift function would make sense, being able to profice and past and future incremental shift on current date . (I have these as harcode variable for now like HISTORY_DAYS)
+- After finishing Historical and working on forcast I deciding that instead of calling getWeatherRange twice, It can be called once using a range set.
+- as a code preference, I prefer using named exports over the default exports, so I refactored and standardized the named exports which means every barrel across the project uses the exact same.
 
 # Challenges
 

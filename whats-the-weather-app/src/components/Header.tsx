@@ -1,12 +1,12 @@
 import { useState } from "react";
-import Search from "./Search";
+import { Search } from "./Search";
 import styles from "./Header.module.css";
 
 interface HeaderProps {
   onSearch: (query: string) => void;
 }
 
-function Header({ onSearch }: HeaderProps) {
+export function Header({ onSearch }: HeaderProps) {
   const [isSearchExpanded, setIsSearchExpanded] = useState(false);
 
   return (
@@ -34,5 +34,3 @@ function Header({ onSearch }: HeaderProps) {
     </header>
   );
 }
-
-export default Header;

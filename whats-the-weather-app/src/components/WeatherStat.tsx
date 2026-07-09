@@ -6,7 +6,7 @@ interface WeatherStatProps {
   percentage?: number;
 }
 
-function WeatherStat({ label, value, percentage }: WeatherStatProps) {
+export function WeatherStat({ label, value, percentage }: WeatherStatProps) {
   return (
     <div className={styles.stat}>
       <span className={styles.label}>{label}</span>
@@ -19,5 +19,3 @@ function WeatherStat({ label, value, percentage }: WeatherStatProps) {
     </div>
   );
 }
-
-export default WeatherStat;

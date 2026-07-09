@@ -1,5 +1,5 @@
 import type { DayWeather } from "../types";
-import WeatherStat from "./WeatherStat";
+import { WeatherStat } from "./WeatherStat";
 import styles from "./WeatherCard.module.css";
 
 interface WeatherCardProps {
@@ -15,7 +15,7 @@ function formatDisplayDate(isoDate: string): string {
   });
 }
 
-function WeatherCard({ data }: WeatherCardProps) {
+export function WeatherCard({ data }: WeatherCardProps) {
   return (
     <article className={styles.card}>
       <div className={styles.primary}>
@@ -41,5 +41,3 @@ function WeatherCard({ data }: WeatherCardProps) {
     </article>
   );
 }
-
-export default WeatherCard;
