@@ -40,11 +40,21 @@ I will start off with creating the react vite template
 - I have used Figma AI to generate a Suitable UI/UX Mockup which I will follow to replicate a user friendly design. This deviates from my Original Design layout, which I have now archived (See Design Mockup - documentation\Design Layout\Figma Mock.png).
 - You will note that some assets have been 'Archived' - it a normal world, these would be completely removed, however I want to show you the whole process and thought pattern
 
-# Final Stage UI Design
+# Final Stage UI Design, Refactors and Fixes
 
 - I wanted to create something that was user friendly, I normally follow figma designs from a seperate UI/UX team, so I reached out to the figma UI tool to help me with a design to follow.
 - I wanted to get rid if the cartoon like logo image as, it just did not feel clean and was too seperate from the design in mind - These have been archived and I decided to go with a Simple text logo
 - I also liked the idea of a Hero layout and took the inspiration from the accuweather design (D:\Development\Interview Projects\securitease-assessment\documentation\Design Research\providers\Accuweather\Screenshot 2026-07-08 233603.png)
+- The initial search field was just too complicated and I wanted to simplify it.
+- I turned out to revert back to the humidy % as the percentage bar just was not fitting in with the design.
+- I wanted to add a error handler, as I didnt like how it was through our rros at a client level - there is a much better way I could do this where I carry the code from a service level.
+- I want to add in some sort of animation so I did so on the content load after search
+
+# Future improvements
+
+- CSP headers and whitelist urls
+- Field validation
+- Better loaders for data loading like skeleton loaders
 
 # Testing
 
