@@ -1,3 +1,57 @@
 # Setup Instructions
 
-1. Added a .env.example as a template strucutre for local dev runs.
+## Prerequisites
+
+- Node.js 20+ and npm
+- A free [WeatherStack](https://weatherstack.com/) API key (used for current weather)
+- A free [Visual Crossing](https://www.visualcrossing.com/weather-api) API key (used for historical/forecast weather)
+
+## 1. Install dependencies
+
+```
+cd whats-the-weather-app
+npm install
+```
+
+## 2. Configure environment variables
+
+Copy the example file and fill in your own keys:
+
+```
+cp .env.example .env
+```
+
+`.env` needs four values:
+
+```
+VITE_WEATHERSTACK_API_KEY=your-weatherstack-key
+VITE_WEATHERSTACK_API_BASEURL=https://api.weatherstack.com
+VITE_VISUALCROSSING_API_KEY=your-visual-crossing-key
+VITE_VISUALCROSSING_API_BASE_URL=https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline
+```
+
+These are read client-side (`import.meta.env`), which is why they're prefixed with `VITE_`. There's no
+backend in this project, so the keys are bundled into the client — see the Design Decisions notes for
+the trade-off this implies.
+
+## 3. Run the app locally
+
+```
+npm run dev
+```
+
+Vite will print a local URL.
+
+## 4. Other useful scripts
+
+- `npm run build` — type-checks (`tsc -b`) then produces a production build in `dist/`
+- `npm run preview` — serves the production build locally to sanity-check it
+- `npm test` — runs the Vitest suite
+- `npm run lint` — runs ESLint
+
+## Deployment
+
+The app is deployed to Vercel. Because the Vite project lives in the `whats-the-weather-app`
+subdirectory rather than the repo root, a `vercel.json` at the repo root points Vercel at the correct
+install/build commands and output directory — no dashboard configuration is required beyond setting
+the four environment variables above in the Vercel project settings.
