@@ -7,6 +7,7 @@ import {
   shiftDate,
   getCachedWeather,
   setCachedWeather,
+  getWeatherErrorMessage,
 } from "../utils";
 
 const RANGE_DAYS = 3;
@@ -41,13 +42,18 @@ export function useWeatherSearch() {
         .filter((day) => day.datetime > current.date)
         .map(mapVisualCrossingDay);
 
-      const data = { current, forecast, history };
+      const data = {
+        location: currentRaw.location.name,
+        current,
+        forecast,
+        history,
+      };
       setCachedWeather(query, data);
       setState({ status: "success", data });
     } catch (error) {
       setState({
         status: "error",
-        error: error instanceof Error ? error.message : "Oh no! Mission Failed",
+        error: getWeatherErrorMessage(error),
       });
     }
   }

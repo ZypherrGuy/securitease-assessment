@@ -4,6 +4,7 @@ import styles from "./WeatherCard.module.css";
 
 interface WeatherCardProps {
   data: DayWeather;
+  location: string;
 }
 
 function formatDisplayDate(isoDate: string): string {
@@ -15,9 +16,15 @@ function formatDisplayDate(isoDate: string): string {
   });
 }
 
-export function WeatherCard({ data }: WeatherCardProps) {
+export function WeatherCard({ data, location }: WeatherCardProps) {
   return (
     <article className={styles.card}>
+      <div className={styles.info}>
+        <p className={styles.location}>{location}</p>
+        <p className={styles.date}>{formatDisplayDate(data.date)}</p>
+        <p className={styles.description}>{data.description}</p>
+      </div>
+
       <div className={styles.primary}>
         <img
           src={data.iconUrl}
@@ -27,15 +34,12 @@ export function WeatherCard({ data }: WeatherCardProps) {
         <p className={styles.temperature}>{Math.round(data.temperature)}°</p>
       </div>
 
-      <div className={styles.info}>
-        <p className={styles.date}>{formatDisplayDate(data.date)}</p>
-        {data.time && <p className={styles.time}>{data.time}</p>}
-        <p className={styles.description}>{data.description}</p>
-      </div>
-
       <div className={styles.stats}>
-        <WeatherStat label="Feels like" value={`${Math.round(data.feelsLike)}°`} />
-        <WeatherStat label="Humidity" percentage={data.humidity} />
+        <WeatherStat
+          label="Feels like"
+          value={`${Math.round(data.feelsLike)}°`}
+        />
+        <WeatherStat label="Humidity" value={`${data.humidity}%`} />
         <WeatherStat label="Wind" value={`${data.windSpeed} km/h`} />
       </div>
     </article>

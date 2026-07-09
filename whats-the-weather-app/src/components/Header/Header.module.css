@@ -1,48 +1,43 @@
 .header {
-  position: relative;
-  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2px 32px;
-  background: var(--color-secondary);
+  gap: 16px;
+  padding: 16px 32px;
+  background: var(--color-primary);
 }
 
-.header::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("/assets/images/cloud_banner.png");
-  background-size: cover;
-  background-position: center;
-  opacity: 0.35;
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.logoWrapper {
-  position: relative;
-  z-index: 1;
+.mark {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
 }
 
-.logo {
-  height: 90px;
-  width: auto;
+.wordmark {
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: 18px;
 }
 
-@media (max-width: 768px) {
-  .logoWrapper {
-    overflow: hidden;
-    transition:
-      opacity 0.35s ease,
-      transform 0.35s ease,
-      width 0.35s ease,
-      margin 0.35s ease;
+.tagline {
+  margin: 0;
+  color: var(--color-white);
+  opacity: 0.8;
+  font-size: 13px;
+}
+
+@media (max-width: 640px) {
+  .header {
+    padding: 14px 20px;
   }
 
-  .logoHidden {
-    width: 0;
-    margin: 0;
-    opacity: 0;
-    transform: scale(0.5);
-    pointer-events: none;
+  .tagline {
+    display: none;
   }
 }

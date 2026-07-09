@@ -7,6 +7,7 @@ interface WeatherRangeSectionProps {
   days: DayWeather[];
   selectedDate?: string;
   onSelectDay: (day: DayWeather) => void;
+  variant?: "history" | "forecast";
 }
 
 export function WeatherRangeSection({
@@ -14,6 +15,7 @@ export function WeatherRangeSection({
   days,
   selectedDate,
   onSelectDay,
+  variant = "history",
 }: WeatherRangeSectionProps) {
   return (
     <div className={styles.section}>
@@ -25,6 +27,7 @@ export function WeatherRangeSection({
             data={day}
             isSelected={day.date === selectedDate}
             onSelect={() => onSelectDay(day)}
+            variant={variant}
           />
         ))}
       </div>
